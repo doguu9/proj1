@@ -1,4 +1,4 @@
-*Note: Potentially high accuracy rate due to lack of data. Try 30 epochs again with more images?
+*Note: High accuracy rate may be misleading due to sparse data
 
 Base: vgg16
  Trainable layers: 4

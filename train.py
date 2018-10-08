@@ -205,7 +205,7 @@ def show_errors(model, image_size, validation_dir):
 
     # DATA: Write description of params to txt file
     f = open('/home/kate/proj1/results/{}/description.txt'.format(folder), 'a')
-    f.write(" Base: {}\n Trainable layers:\n Training Directory: {}\n Validation Directory: {}\n Epochs: {}".format(base, n_layers, train_dir, validation_dir, ep))
+    f.write("Base: {}\n Trainable layers: {}\n Training Directory: {}\n Validation Directory: {}\n Epochs: {}".format(base, n_layers, train_dir, validation_dir, ep))
     f.close()
 
     # DATA: Write precision recall curve to mat file

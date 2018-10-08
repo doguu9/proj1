@@ -2,4 +2,8 @@
  Trainable layers:
  Training Directory: 4
  Validation Directory: /home/kate/proj1/imgs/training_imgs
- Epochs: /home/kate/proj1/imgs/validation_imgs
+ Epochs: /home/kate/proj1/imgs/validation_imgsBase: vgg16
+ Trainable layers: 4
+ Training Directory: /home/kate/proj1/imgs/training_imgs
+ Validation Directory: /home/kate/proj1/imgs/validation_imgs
+ Epochs: 20

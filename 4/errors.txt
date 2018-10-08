@@ -1,0 +1,2 @@
+Original label: toothbrushes, Prediction: toothpaste, Confidence: 0.448
+Original label: toothpaste, Prediction: glue, Confidence: 0.805

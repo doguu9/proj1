@@ -1,0 +1,1 @@
+Original label: toothpaste, Prediction: glue, Confidence: 0.882

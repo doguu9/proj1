@@ -15,3 +15,7 @@ Original label: wipes, Prediction: glue, Confidence: 0.955
 Original label: toothbrushes, Prediction: glue, Confidence: 0.825
 Original label: toothpaste, Prediction: glue, Confidence: 0.933
 Original label: toothpaste, Prediction: glue, Confidence: 0.659
+Original label: toothbrushes, Prediction: glue, Confidence: 0.984
+Original label: toothpaste, Prediction: glue, Confidence: 0.904
+Original label: toothpaste, Prediction: watermelon, Confidence: 0.555
+Original label: wipes, Prediction: toothbrushes, Confidence: 0.568

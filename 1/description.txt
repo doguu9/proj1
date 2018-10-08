@@ -1,0 +1,5 @@
+ Base: vgg16
+ Trainable layers:
+ Training Directory: 4
+ Validation Directory: /home/kate/proj1/imgs/training_imgs
+ Epochs: /home/kate/proj1/imgs/validation_imgs

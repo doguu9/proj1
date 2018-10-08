@@ -1,0 +1,17 @@
+Original label: toothbrushes, Prediction: glue, Confidence: 0.687
+Original label: toothpaste, Prediction: glue, Confidence: 0.974
+Original label: toothpaste, Prediction: glue, Confidence: 0.868
+Original label: wipes, Prediction: toothbrushes, Confidence: 0.718
+Original label: toothbrushes, Prediction: glue, Confidence: 0.627
+Original label: toothpaste, Prediction: glue, Confidence: 0.884
+Original label: toothpaste, Prediction: glue, Confidence: 0.506
+Original label: wipes, Prediction: toothbrushes, Confidence: 0.808
+Original label: toothbrushes, Prediction: glue, Confidence: 0.664
+Original label: toothbrushes, Prediction: glue, Confidence: 0.903
+Original label: toothbrushes, Prediction: zoink, Confidence: 0.993
+Original label: toothpaste, Prediction: glue, Confidence: 0.890
+Original label: toothpaste, Prediction: watermelon, Confidence: 0.928
+Original label: wipes, Prediction: glue, Confidence: 0.955
+Original label: toothbrushes, Prediction: glue, Confidence: 0.825
+Original label: toothpaste, Prediction: glue, Confidence: 0.933
+Original label: toothpaste, Prediction: glue, Confidence: 0.659

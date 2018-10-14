@@ -1,0 +1,4 @@
+Original label: dasani, Prediction: climbing_hold, Confidence: 0.961
+Original label: dasani, Prediction: climbing_hold, Confidence: 0.527
+Original label: dasani, Prediction: climbing_hold, Confidence: 0.928
+Original label: toothpaste, Prediction: glue, Confidence: 0.939

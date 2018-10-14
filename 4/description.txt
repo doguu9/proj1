@@ -1,6 +1,0 @@
-Base: vgg16
-Trainable layers: 3
-Training Directory: /home/kate/proj1/imgs/more_training
-Validation Directory: /home/kate/proj1/imgs/validation_imgs
-Epochs: 10
-Additional Notes: 

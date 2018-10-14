@@ -1,7 +1,0 @@
-Original label: glue, Prediction: climbing_hold, Confidence: 0.598
-Original label: toothbrushes, Prediction: zoink, Confidence: 0.882
-Original label: toothbrushes, Prediction: zoink, Confidence: 0.831
-Original label: toothbrushes, Prediction: zoink, Confidence: 0.998
-Original label: toothpaste, Prediction: watermelon, Confidence: 0.663
-Original label: toothpaste, Prediction: clip, Confidence: 0.733
-Original label: toothpaste, Prediction: watermelon, Confidence: 0.984

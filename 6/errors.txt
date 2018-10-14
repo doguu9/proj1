@@ -1,1 +1,0 @@
-Original label: wipes, Prediction: toothbrushes, Confidence: 0.925

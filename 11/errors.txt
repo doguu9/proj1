@@ -1,2 +1,0 @@
-Original label: toothpaste, Prediction: clip, Confidence: 0.675
-Original label: wipes, Prediction: glue, Confidence: 0.849

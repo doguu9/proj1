@@ -18,22 +18,38 @@ from keras import layers
 from keras import optimizers
 import scipy
 from scipy import io
-
+import sklearn
+from sklearn import metrics
+from sklearn.metrics import precision_recall_curve
+import matplotlib.pyplot as plt
+from sklearn.utils.fixes import signature
 from perception import CameraIntrinsics, ColorImage, BinaryImage
+from keras.applications.resnet50 import ResNet50
+from keras.applications.resnet50 import preprocess_input, decode_predictions
+from keras.applications.inception_v3 import InceptionV3
+from keras.preprocessing import image
+from keras.models import Model
+from keras.layers import Dense, GlobalAveragePooling2D
+from keras.applications.vgg19 import VGG19
+from keras.applications.vgg19 import preprocess_input
 
-train_dir = '/home/kate/proj1/imgs/training_imgs'
-validation_dir = '/home/kate/proj1/imgs/validation_imgs'
+train_dir = '/home/kate/proj1/imgs/single_obj_dataset/train/'
+validation_dir = '/home/kate/proj1/imgs/single_obj_dataset/validation/'
 image_size = 224
-folder = '1'
+folder = 'vgg19_3'
 n_classes = 10
-base = "vgg16"
-n_layers = 4
+base = "vgg19"
+n_layers = 3
 ep = 20
+learning_rate = 9e-5
+notes = "vgg19 9e-5 learning rate"
 
 def init_model(image_size):
 
     # Load the VGG model
-    vgg_conv = VGG16(weights='imagenet', include_top=False, input_shape=(image_size, image_size, 3))
+    #vgg_conv = InceptionV3(weights='imagenet', include_top=False, input_shape=(image_size, image_size, 3))
+    base_model = VGG19(weights='imagenet', input_shape=(image_size, image_size, 3))
+    vgg_conv = Model(inputs=base_model.input, outputs=base_model.get_layer('block4_pool').output)
 
     # Freeze all the layers
     for layer in vgg_conv.layers[:-n_layers]:
@@ -75,8 +91,8 @@ def train_model_simple(model, image_size, train_dir, validation_dir):
     validation_datagen = ImageDataGenerator(rescale=1./255)
 
     # Change the batchsize according to your system RAM
-    train_batchsize = 70
-    val_batchsize = 30
+    train_batchsize = 100
+    val_batchsize = 50
 
     # Data Generator for Training data
     train_generator = train_datagen.flow_from_directory(
@@ -95,7 +111,7 @@ def train_model_simple(model, image_size, train_dir, validation_dir):
 
     # Compile the model
     model.compile(loss='categorical_crossentropy',
-                optimizer=optimizers.RMSprop(lr=1e-4),
+                optimizer=optimizers.RMSprop(lr=learning_rate),
                 metrics=['acc'])
 
     # Train the Model
@@ -125,6 +141,7 @@ def train_model_simple(model, image_size, train_dir, validation_dir):
     plt.plot(epochs, val_acc, 'r', label='Validation acc')
     plt.title('Training and validation accuracy')
     plt.legend()
+    plt.savefig('/home/kate/proj1/results/{}/acc_curve.png'.format(folder))
 
     plt.figure()
 
@@ -133,18 +150,7 @@ def train_model_simple(model, image_size, train_dir, validation_dir):
     plt.title('Training and validation loss')
     plt.legend()
 
-    plt.show()
-
-    # DATA: Write loss and accuracy curves to mat file
-    loss_arr = []
-    accuracy_arr = []
-    for i in range(len(acc)):
-        loss_arr.append([loss[i], val_loss[i]])
-        accuracy_arr.append([acc[i], val_acc[i]])
-    loss_arr = np.asarray(loss_arr)
-    accuracy_arr = np.asarray(accuracy_arr)
-    scipy.io.savemat('/home/kate/proj1/results/{}/loss.mat'.format(folder), mdict={'loss': loss_arr})
-    scipy.io.savemat('/home/kate/proj1/results/{}/accuracy.mat'.format(folder), mdict={'accuracy': accuracy_arr})
+    plt.savefig('/home/kate/proj1/results/{}/loss_curve.png'.format(folder))
 
 def show_errors(model, image_size, validation_dir):
     # Create a generator for prediction
@@ -170,7 +176,7 @@ def show_errors(model, image_size, validation_dir):
     idx2label = dict((v,k) for k,v in label2index.items())
 
     # Get the predictions from the model using the generator
-    predictions = model.predict_generator(validation_generator, steps=validation_generator.samples/validation_generator.batch_size + 1,verbose=1)
+    predictions = model.predict_generator(validation_generator, steps=validation_generator.samples/validation_generator.batch_size,verbose=1)
     predicted_classes = np.argmax(predictions,axis=1)
 
     errors = np.where(predicted_classes != ground_truth)[0]
@@ -205,47 +211,58 @@ def show_errors(model, image_size, validation_dir):
 
     # DATA: Write description of params to txt file
     f = open('/home/kate/proj1/results/{}/description.txt'.format(folder), 'a')
-    f.write("Base: {}\n Trainable layers: {}\n Training Directory: {}\n Validation Directory: {}\n Epochs: {}".format(base, n_layers, train_dir, validation_dir, ep))
+    f.write("Base: {}\nTrainable layers: {}\nLearning Rate: {}\nTraining Directory: {}\nValidation Directory: {}\nEpochs: {}\nAdditional Notes: {}".format(base, n_layers, learning_rate, train_dir, validation_dir, ep, notes))
     f.close()
 
-    # DATA: Write precision recall curve to mat file
-    # Subtask: Create confusion matrix for classification
-    confusion_arr = []
-    for i in range(0, n_classes):
-        new_row = []
-        for j in range(0, n_classes):
-            new_row.append(0)
-        confusion_arr.append(new_row)
-    for entry in range(len(ground_truth)):
-        confusion_arr[ground_truth[entry]][predicted_classes[entry]] += 1
-    # Subtask: Extract Tp, Fp, and Fn values from matrix
-    values = []
-    subvalues = []
-    for entry in range(0, n_classes):
-        subvalues.append(0)
-    for row in confusion_arr:
-        for elem in row:
-            subvalues[elem] += 1
-    for entry in range(0, n_classes):
-        tp = confusion_arr[entry][entry]
-        fp = sum(confusion_arr[entry]) - tp
-        fn = subvalues[entry]
-        values.append([entry, tp, fp, fn])
-    #Subtask: Calculate precision and recall values for all classes
-    pr_vals = []
-    for label in values:
-        if label[1] + label[2] != 0:
-            precision = float(label[1]) / float(label[1] + label[2])
-        else:
-            precision = 0
-        if label[1] + label[3] != 0:
-            recall = float(label[1]) / float(label[1] + label[3])
-        else:
-            recall = 0
-        pr_vals.append([precision, recall])
-    #Subtask: Write pr_vals array to mat file
-    pr_curve = np.asarray(pr_vals)
-    scipy.io.savemat('/home/kate/proj1/results/{}/prcurve.mat'.format(folder), mdict={'pr_curve': pr_curve})
+    f = open('/home/kate/proj1/results/{}/raw.txt'.format(folder), 'a')
+    l = len(predictions)
+    for n in range(l):
+        f.write('Label: {}    Predictions: {}\n'.format(idx2label[ground_truth[n]], predictions[n]))
+    f.close()
+
+    for index in range(n_classes):
+        pr_curve(ground_truth, predictions, idx2label, index)
+    pr_all(ground_truth, predictions, idx2label, n_classes)
+
+
+def pr_curve(ground_truth, predictions, idx2label, index):
+    label = []
+    confidence = []
+    for elem in ground_truth:
+        label.append(1) if elem == index else label.append(0)
+    for elem in predictions:
+        confidence.append(elem[index])
+    label = np.asarray(label)
+    confidence = np.asarray(confidence)
+    precision, recall, thresholds = sklearn.metrics.precision_recall_curve(label, confidence)
+    plt.figure()
+    plt.plot(recall, precision, 'b')
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.ylim([0.0, 1.05])
+    plt.xlim([0.0, 1.0])
+    plt.title('{} Precision Recall Curve'.format(idx2label[index]))
+    plt.savefig('/home/kate/proj1/results/{}/pr_curves/pr_{}.png'.format(folder, idx2label[index]))
+
+def pr_all(ground_truth, predictions, idx2label, n_index):
+    label = []
+    confidence = []
+    for i in range(n_index):
+        for elem in ground_truth:
+            label.append(1) if elem == i else label.append(0)
+        for elem in predictions:
+            confidence.append(elem[i])
+    label = np.asarray(label)
+    confidence = np.asarray(confidence)
+    precision, recall, thresholds = sklearn.metrics.precision_recall_curve(label, confidence)
+    plt.figure()
+    plt.plot(recall, precision, 'b')
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.ylim([0.0, 1.05])
+    plt.xlim([0.0, 1.0])
+    plt.title('Multilabel Precision Recall Curve')
+    plt.savefig('/home/kate/proj1/results/{}/pr_curves/pr_all.png'.format(folder))
 
 if __name__ == '__main__':
     model = init_model(image_size)

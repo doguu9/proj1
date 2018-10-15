@@ -1,0 +1,7 @@
+Base: vgg19
+Trainable layers: 6
+Learning Rate: 9e-05
+Training Directory: /home/kate/proj1/imgs/single_obj_dataset/train/
+Validation Directory: /home/kate/proj1/imgs/single_obj_dataset/validation/
+Epochs: 20
+Additional Notes: vgg19 9e-5 learning rate

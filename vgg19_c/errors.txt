@@ -1,0 +1,4 @@
+Original label: glue, Prediction: clip, Confidence: 0.988
+Original label: glue, Prediction: clip, Confidence: 0.987
+Original label: glue, Prediction: clip, Confidence: 0.886
+Original label: glue, Prediction: clip, Confidence: 0.999

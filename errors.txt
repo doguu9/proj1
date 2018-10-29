@@ -1,0 +1,402 @@
+~~~ SIAMESE NETWORK ERROR ANALYSIS ~~~
+
+NUMBER OF ERRORS: 128    NUM ERRORS WHEN LABEL IS 1: 58    NUM ERRORS WHEN LABEL IS 0: 70
+
+OVERALL CONFIDENCE DEVIATION FROM 0 OR 1
+MEAN: 0.100421458541    MEDIAN: 0.0559794902802    STANDARD DEVIATION: 0.120808077174
+
+ERROR CONFIDENCE DEVIATION FROM 0 OR 1
+MEAN: 0.312829071307    MEDIAN: 0.331896841526    STANDARD DEVIATION: 0.131179032305
+
+MOST FREQUENTLY OCCURRING CLASSES IN WRONG PREDICTIONS: 
+antacid_tablets - in 24 predictions
+degree_deodorant - in 19 predictions
+scotch_tape - in 15 predictions
+
+
+ERROR LOG:
+
+dice AND arm_and_hammer_deoderant
+PREDICTION: 0.869431555271
+
+hammer AND fim_soup
+PREDICTION: 0.601236045361
+
+sardines_can AND degree_deodorant
+PREDICTION: 0.662854373455
+
+bar_clamp AND bar_clamp
+PREDICTION: 0.370095103979
+
+mouse_traps AND bar_clamp
+PREDICTION: 0.809069395065
+
+yoda AND yoda
+PREDICTION: 0.343164473772
+
+fim_soup AND degree_deodorant
+PREDICTION: 0.780594706535
+
+bar_clamp AND bar_clamp
+PREDICTION: 0.0869649201632
+
+strawberry AND strawberry
+PREDICTION: 0.474522024393
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.282748103142
+
+yoda AND chubby_slider
+PREDICTION: 0.723783791065
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.297730594873
+
+chubby_slider AND yoda
+PREDICTION: 0.79027056694
+
+degree_deodorant AND degree_deodorant
+PREDICTION: 0.488021075726
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.242487624288
+
+spray_bottle AND spray_bottle
+PREDICTION: 0.0861020535231
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.440583705902
+
+chubby_slider AND yoda
+PREDICTION: 0.714057087898
+
+carmex_balm AND scotch_tape
+PREDICTION: 0.948218107224
+
+hammer AND hammer
+PREDICTION: 0.422017455101
+
+demon_helmet AND sardines_can
+PREDICTION: 0.512838959694
+
+bar_clamp AND mouse_traps
+PREDICTION: 0.805851578712
+
+spray_bottle AND spray_bottle
+PREDICTION: 0.0947828739882
+
+mouse_traps AND bar_clamp
+PREDICTION: 0.610273122787
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.331896841526
+
+arm_and_hammer_deoderant AND degree_deodorant
+PREDICTION: 0.545582652092
+
+degree_deodorant AND demon_helmet
+PREDICTION: 0.587168872356
+
+chubby_slider AND yoda
+PREDICTION: 0.863943874836
+
+mouse_traps AND arm_and_hammer_deoderant
+PREDICTION: 0.866393864155
+
+hammer AND demon_helmet
+PREDICTION: 0.783340752125
+
+arm_and_hammer_deoderant AND carmex_balm
+PREDICTION: 0.861144125462
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.297730594873
+
+carmex_balm AND antacid_tablets
+PREDICTION: 0.646879851818
+
+janek AND scotch_tape
+PREDICTION: 0.732808530331
+
+chubby_slider AND janek
+PREDICTION: 0.826727390289
+
+hammer AND hammer
+PREDICTION: 0.422017455101
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.299061149359
+
+hammer AND hammer
+PREDICTION: 0.141826063395
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.198488712311
+
+degree_deodorant AND degree_deodorant
+PREDICTION: 0.488021075726
+
+dice AND scotch_tape
+PREDICTION: 0.581185221672
+
+hammer AND hammer
+PREDICTION: 0.141826063395
+
+yoda AND yoda
+PREDICTION: 0.46400731802
+
+carmex_balm AND degree_deodorant
+PREDICTION: 0.54905974865
+
+janek AND janek
+PREDICTION: 0.146782442927
+
+spray_bottle AND spray_bottle
+PREDICTION: 0.45110732317
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.49942779541
+
+scotch_tape AND demon_helmet
+PREDICTION: 0.932453930378
+
+degree_deodorant AND fim_soup
+PREDICTION: 0.615962505341
+
+yoda AND chubby_slider
+PREDICTION: 0.514952480793
+
+spray_bottle AND spray_bottle
+PREDICTION: 0.0947828739882
+
+mouse_traps AND carmex_balm
+PREDICTION: 0.613768398762
+
+degree_deodorant AND carmex_balm
+PREDICTION: 0.505997061729
+
+chubby_slider AND janek
+PREDICTION: 0.53102350235
+
+hammer AND demon_helmet
+PREDICTION: 0.761402904987
+
+arm_and_hammer_deoderant AND antacid_tablets
+PREDICTION: 0.533591687679
+
+antacid_tablets AND carmex_balm
+PREDICTION: 0.824279785156
+
+yoda AND yoda
+PREDICTION: 0.46400731802
+
+bar_clamp AND chubby_slider
+PREDICTION: 0.662652373314
+
+spray_bottle AND scotch_tape
+PREDICTION: 0.639716148376
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.440583705902
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.390513926744
+
+demon_helmet AND demon_helmet
+PREDICTION: 0.317983359098
+
+demon_helmet AND demon_helmet
+PREDICTION: 0.467911094427
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.331896841526
+
+arm_and_hammer_deoderant AND arm_and_hammer_deoderant
+PREDICTION: 0.465326786041
+
+carmex_balm AND dice
+PREDICTION: 0.664083659649
+
+janek AND janek
+PREDICTION: 0.146782442927
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.299061149359
+
+demon_helmet AND scotch_tape
+PREDICTION: 0.758387684822
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.417120218277
+
+demon_helmet AND janek
+PREDICTION: 0.556213080883
+
+demon_helmet AND scotch_tape
+PREDICTION: 0.821435391903
+
+antacid_tablets AND sardines_can
+PREDICTION: 0.575097739697
+
+sardines_can AND degree_deodorant
+PREDICTION: 0.895283222198
+
+mouse_traps AND bar_clamp
+PREDICTION: 0.889829456806
+
+bar_clamp AND chubby_slider
+PREDICTION: 0.709316492081
+
+degree_deodorant AND degree_deodorant
+PREDICTION: 0.337195038795
+
+degree_deodorant AND fim_soup
+PREDICTION: 0.716574132442
+
+hammer AND hammer
+PREDICTION: 0.157506078482
+
+sardines_can AND demon_helmet
+PREDICTION: 0.696452796459
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.479677885771
+
+antacid_tablets AND fim_soup
+PREDICTION: 0.796873986721
+
+bar_clamp AND bar_clamp
+PREDICTION: 0.442590355873
+
+yoda AND mouse_traps
+PREDICTION: 0.836674630642
+
+dice AND scotch_tape
+PREDICTION: 0.512144625187
+
+arm_and_hammer_deoderant AND scotch_tape
+PREDICTION: 0.836579024792
+
+antacid_tablets AND degree_deodorant
+PREDICTION: 0.820507287979
+
+janek AND hammer
+PREDICTION: 0.551181435585
+
+yoda AND yoda
+PREDICTION: 0.46400731802
+
+degree_deodorant AND scotch_tape
+PREDICTION: 0.694532990456
+
+arm_and_hammer_deoderant AND strawberry
+PREDICTION: 0.854194879532
+
+fim_soup AND sardines_can
+PREDICTION: 0.779847383499
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.440583705902
+
+yoda AND chubby_slider
+PREDICTION: 0.50918161869
+
+dice AND carmex_balm
+PREDICTION: 0.955130755901
+
+fim_soup AND fim_soup
+PREDICTION: 0.328276306391
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.422128230333
+
+dice AND chubby_slider
+PREDICTION: 0.876758873463
+
+yoda AND chubby_slider
+PREDICTION: 0.755699396133
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.417120218277
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.425774425268
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.431435793638
+
+degree_deodorant AND degree_deodorant
+PREDICTION: 0.488021075726
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.413085460663
+
+arm_and_hammer_deoderant AND arm_and_hammer_deoderant
+PREDICTION: 0.469281673431
+
+dice AND dice
+PREDICTION: 0.49543017149
+
+brown_climbing_hold AND brown_climbing_hold
+PREDICTION: 0.282748103142
+
+degree_deodorant AND hammer
+PREDICTION: 0.579207539558
+
+arm_and_hammer_deoderant AND strawberry
+PREDICTION: 0.757495880127
+
+fim_soup AND sardines_can
+PREDICTION: 0.845813751221
+
+carmex_balm AND scotch_tape
+PREDICTION: 0.876344025135
+
+arm_and_hammer_deoderant AND mouse_traps
+PREDICTION: 0.950518071651
+
+antacid_tablets AND hammer
+PREDICTION: 0.745866000652
+
+degree_deodorant AND scotch_tape
+PREDICTION: 0.774311423302
+
+sardines_can AND scotch_tape
+PREDICTION: 0.632035076618
+
+degree_deodorant AND degree_deodorant
+PREDICTION: 0.337195038795
+
+yoda AND yoda
+PREDICTION: 0.441458553076
+
+yoda AND dice
+PREDICTION: 0.622731626034
+
+degree_deodorant AND degree_deodorant
+PREDICTION: 0.337195038795
+
+bar_clamp AND antacid_tablets
+PREDICTION: 0.706135332584
+
+hammer AND hammer
+PREDICTION: 0.293959319592
+
+antacid_tablets AND antacid_tablets
+PREDICTION: 0.390513926744
+
+demon_helmet AND janek
+PREDICTION: 0.56257379055
+
+hammer AND hammer
+PREDICTION: 0.430521935225
+
+arm_and_hammer_deoderant AND antacid_tablets
+PREDICTION: 0.810872077942
+
+scotch_tape AND scotch_tape
+PREDICTION: 0.473209053278
+
+arm_and_hammer_deoderant AND scotch_tape
+PREDICTION: 0.769776046276
+

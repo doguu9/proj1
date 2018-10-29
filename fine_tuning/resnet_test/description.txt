@@ -1,0 +1,7 @@
+Base: resnet50
+Trainable layers: 4
+Learning Rate: 7e-05
+Training Directory: /home/kate/proj1/imgs/single_obj_dataset/train/
+Validation Directory: /home/kate/proj1/imgs/single_obj_dataset/validation/
+Epochs: 20
+Additional Notes: Changed base to resnet50

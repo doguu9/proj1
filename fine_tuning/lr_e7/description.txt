@@ -1,0 +1,7 @@
+Base: vgg16
+Trainable layers: 4
+Learning Rate: 1e-07
+Training Directory: /home/kate/proj1/imgs/single_obj_dataset/train/
+Validation Directory: /home/kate/proj1/imgs/single_obj_dataset/validation/
+Epochs: 20
+Additional Notes: Decreased learning rate by 3 degrees

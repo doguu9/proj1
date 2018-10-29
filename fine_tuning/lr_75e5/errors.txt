@@ -1,0 +1,9 @@
+Original label: dasani, Prediction: climbing_hold, Confidence: 0.724
+Original label: dasani, Prediction: wipes, Confidence: 0.528
+Original label: dasani, Prediction: wipes, Confidence: 0.414
+Original label: dasani, Prediction: wipes, Confidence: 0.683
+Original label: dasani, Prediction: wipes, Confidence: 0.657
+Original label: glue, Prediction: clip, Confidence: 0.911
+Original label: glue, Prediction: clip, Confidence: 0.764
+Original label: glue, Prediction: clip, Confidence: 0.765
+Original label: glue, Prediction: clip, Confidence: 0.941
